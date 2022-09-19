@@ -1,1 +1,1 @@
-code . & exit
+echo | code . | exit /b
