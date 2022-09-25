@@ -99,8 +99,8 @@ var csvFiles = [
 ]
 
 const serverIP = [
-    { ip: '192.168.114.24', machine_name: 'machine1' },
-    { ip: '192.168.114.24', machine_name: 'machine2' }
+    { ip: '192.168.114.24', server_name: 'machine1' },
+    { ip: '192.168.114.24', server_name: 'machine2' }
 ]
 
 var jsonArray = []
@@ -110,7 +110,7 @@ exports.READ_CSV_FILE = async (req, res) => {
     try {
         for (const server of serverIP) {
             for (const file of csvFiles) {
-                await ftpSingleFileRead(file.file_path, file.file_name, server.ip, server.machine_name)
+                await ftpSingleFileRead(file.file_path, file.file_name, server.ip, server.server_name)
             }
         }
         // for (const file of csvFiles) {
